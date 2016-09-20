@@ -29,6 +29,10 @@ module Clearance
       @user_model || ::User
     end
 
+    def custom_user_model
+      @user_model || ::User
+    end
+
     def user_client_model
       @user_client_model || ::UserClient
     end

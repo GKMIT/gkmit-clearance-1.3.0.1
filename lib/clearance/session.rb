@@ -85,17 +85,17 @@ module Clearance
       p "______________"
       p Clearance.configuration.user_client_model
       p "______________"
-      p Clearance.configuration.user_model
+      p Clearance.configuration.custom_user_model
       p "______________"
       p Clearance.configuration.user_client_model.where(remember_token: token).first
       p "______________"
       p Clearance.configuration.user_client_model.where(remember_token: token).first.user_id
       p "______________"
-      p Clearance.configuration.user_model.find(Clearance.configuration.user_client_model.where(remember_token: token).first.user_id)
+      p Clearance.configuration.custom_user_model.find(Clearance.configuration.user_client_model.where(remember_token: token).first.user_id)
       p "______________"
       p "______________"
       p "______________"
-      Clearance.configuration.user_model.find((Clearance.configuration.user_client_model.where(remember_token: token).first).user_id) if Clearance.configuration.user_client_model.where(remember_token: token).first
+      Clearance.configuration.custom_user_model.find((Clearance.configuration.user_client_model.where(remember_token: token).first).user_id) if Clearance.configuration.user_client_model.where(remember_token: token).first
     end
 
     def run_sign_in_stack

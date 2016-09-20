@@ -78,7 +78,7 @@ module Clearance
     end
 
     def user_client_from_remember_token(token)
-      User.find(UserClient.where(remember_token: token).first.user_id) unless UserClient.where(remember_token: token).first
+      Clearance.configuration.user_model.find(Clearance.configuration.user_client_model.where(remember_token: token).first.user_id) if Clearance.configuration.user_client_model.where(remember_token: token).first
     end
 
     def run_sign_in_stack

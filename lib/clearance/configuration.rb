@@ -13,6 +13,7 @@ module Clearance
       :secure_cookie,
       :sign_in_guards,
       :user_model
+      :user_client_model
 
     def initialize
       @allow_sign_up = true
@@ -25,16 +26,12 @@ module Clearance
       @sign_in_guards = []
     end
 
-    def user_model
-      @user_model || ::User
-    end
-
-    def custom_user_model
-      @user_model || ::User
-    end
-
     def user_client_model
       @user_client_model || ::UserClient
+    end
+
+    def user_model
+      @user_model || ::User
     end
 
     def allow_sign_up?

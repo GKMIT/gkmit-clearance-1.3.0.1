@@ -91,7 +91,7 @@ module Clearance
       p "______________"
       p Clearance.configuration.user_client_model.where(remember_token: token).first.user_id
       p "______________"
-      p Clearance.configuration.user_model.find(Clearance.configuration.user_client_model.where(remember_token: token).first.user_id)
+      # p Clearance.configuration.user_model.find(Clearance.configuration.user_client_model.where(remember_token: token).first.user_id)
       p "______________"
       p "______________"
       p "______________"

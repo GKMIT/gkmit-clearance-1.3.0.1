@@ -13,7 +13,7 @@ module Clearance
       :secure_cookie,
       :sign_in_guards,
       :user_model
-      :user_client_model
+
 
     def initialize
       @allow_sign_up = true

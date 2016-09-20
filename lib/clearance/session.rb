@@ -15,6 +15,8 @@ module Clearance
     def current_user
       if remember_token.present?
         @current_user ||= user_client_from_remember_token(remember_token)
+        p "*******current user ******"
+        p @current_user
       end
       @current_user
     end
@@ -78,6 +80,21 @@ module Clearance
     end
 
     def user_client_from_remember_token(token)
+      p "in user client from token"
+      p token
+      p "______________"
+      p Clearance.configuration.user_client_model
+      p "______________"
+      p Clearance.configuration.user_model
+      p "______________"
+      p Clearance.configuration.user_client_model.where(remember_token: token).first
+      p "______________"
+      p Clearance.configuration.user_client_model.where(remember_token: token).first.user_id
+      p "______________"
+      p Clearance.configuration.user_model.find(Clearance.configuration.user_client_model.where(remember_token: token).first.user_id)
+      p "______________"
+      p "______________"
+      p "______________"
       Clearance.configuration.user_model.find(Clearance.configuration.user_client_model.where(remember_token: token).first.user_id) if Clearance.configuration.user_client_model.where(remember_token: token).first
     end
 
